@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Logi</class>
+ <widget class="QDialog" name="Logi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>574</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QToolButton" name="toolButton">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="dogs.qrc">
+       <normaloff>:/dog/img/339ff48a641a4cf1d93211535e39a547.jpg</normaloff>:/dog/img/339ff48a641a4cf1d93211535e39a547.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>260</width>
+       <height>260</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="toolButton_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="dogs.qrc">
+       <normaloff>:/dog/img/5969c9f1f7378117fab4f533873f16bc.jpg</normaloff>:/dog/img/5969c9f1f7378117fab4f533873f16bc.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>260</width>
+       <height>260</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="dogs.qrc"/>
+ </resources>
+ <connections/>
+</ui>

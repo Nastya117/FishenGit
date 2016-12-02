@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/dog">
+        <file>img/339ff48a641a4cf1d93211535e39a547.jpg</file>
+        <file>img/5969c9f1f7378117fab4f533873f16bc.jpg</file>
+    </qresource>
+</RCC>
