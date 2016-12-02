@@ -1,9 +1,11 @@
-# The Trusty beta Build Environment
-sudo: required
-dist: trusty
+language: cpp
 
-install:
-  - sudo apt-get install -y qt5-default qttools5-dev-tools libqt5websockets5-dev  #install necessary Qt files
+os:
+  - osx
+
+before_install:
+  - brew install qt5
+  - brew link --force qt5
 
 script:
   - cd FishServ
