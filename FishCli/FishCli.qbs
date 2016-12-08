@@ -1,6 +1,7 @@
 import qbs
 
 CppApplication {
+
     consoleApplication: true
     cpp.cxxLanguageVersion: "c++14"
     cpp.includePaths: ["."]

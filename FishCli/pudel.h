@@ -24,6 +24,7 @@ private:
     Ui::Pudel *ui;
     void vibr(QString s);
     void sochi();
+    void redok();
 };
 
 #endif // PUDEL_H

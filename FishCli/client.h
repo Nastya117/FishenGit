@@ -11,6 +11,7 @@ public:
     explicit Client(const QUrl &url, bool debug = true, QObject *parent = Q_NULLPTR);
 
     void sendTextMessage(QString message);
+    void sendBinaryMessage(QByteArray message);
     void onBinaryMessageReceived(QByteArray message);
 Q_SIGNALS:
     void closed();

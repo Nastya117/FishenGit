@@ -32,6 +32,11 @@ void Client::sendTextMessage(QString message)
     m_webSocket.sendTextMessage(message);
 }
 
+void Client::sendBinaryMessage(QByteArray message)
+{
+    m_webSocket.sendBinaryMessage(message);
+}
+
 void Client::onTextMessageReceived(QString message)
 {
     if (m_debug)

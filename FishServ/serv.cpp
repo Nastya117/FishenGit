@@ -45,7 +45,6 @@ void serv::onNewConnection()
 void serv::processTextMessage(QString message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
-    if (m_debug)
         qDebug() << "Message received:" << message;
     if (pClient) {
         QStringList msgs = message.split("\n");
@@ -108,16 +107,77 @@ void serv::processTextMessage(QString message)
                         hh.write("\n");
                     }
                 }
+        else
+                if (msgs[0] == "addolf")
+                {
+                    QString kolba = QDir::homePath() + "/img/" + msgs[1];
+                    QDir ll;
+                    ll.mkdir(kolba);
+                    qDebug() << kolba;
+                }
+        else
+                if (msgs[0] == "inired")
+                {
+                    QString hit = QDir::homePath() + "/img/";
+                    QDir lip(hit);
+                    int kohit;
+                    QStringList lii = lip.entryList(QDir::NoDotAndDotDot | QDir::Dirs);
+                    kohit = lii.size();
+                    QString hop = "dirs\n" + QString::number(kohit) + "\n";
+                    for (int i = 0; i < kohit; ++i)
+                    {
+                        hop += lii[i];
+                        hop += "\n";
+                        QDir popo(hit + "/" +lii[i] + "/");
+                        QStringList popolii = popo.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+                        int kopopo = popolii.size();
+                        hop += QString::number(kopopo);
+                        hop += "\n";
+                        for (int j = 0; j < kopopo; ++j)
+                        {
+                            hop += popolii[j];
+                            hop += "\n";
+                            QDir popo1(hit + "/" +lii[i] + "/" + popolii[j] + "/");
+                            QStringList popolii1 = popo1.entryList(QDir::Files);
+                            int kopopo1 = popolii1.size();
+                            hop += QString::number(kopopo1);
+                            hop += "\n";
+                            for (int kg = 0; kg < kopopo1; ++kg)
+                            {
+                                hop += popolii1[kg];
+                                hop += "\n";
+                            }
+                        }
+                    }
+                    qDebug() << hop;
+                    pClient->sendTextMessage(hop);
+                }
+        else
+                if (msgs[0] == "podaddolf")
+                {
+                    QString kolba = QDir::homePath() + "/img/" + msgs[2] + "/" + msgs[1];
+                    QDir ll;
+                    ll.mkdir(kolba);
+                    qDebug() << kolba;
+                }
     }
 }
 
 void serv::processBinaryMessage(QByteArray message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
-    if (m_debug)
-        qDebug() << "Binary Message received:" << message;
-    if (pClient) {
-        pClient->sendBinaryMessage(message);
+    QDataStream kill(message);
+    kill.setVersion(QDataStream::Qt_5_6);
+    QString kk;
+    kill >> kk;
+    if (kk == "Lovikor")
+    {
+        QString s1, s2, s3;
+        kill >> s1 >> s2 >> s3;
+        QString jip(QDir::homePath() + "/img/" + s1 + "/" + s2 + "/" + s3 + ".jpg");
+        QImage klop;
+        kill >> klop;
+        klop.save(jip);
     }
 }
 

@@ -3,6 +3,7 @@
 #include <QString>
 #include <QImage>
 #include <QDataStream>
+#include <reddak.h>
 
 Pudel::Pudel(class Client &clienter) :
     client(clienter),
@@ -14,6 +15,7 @@ Pudel::Pudel(class Client &clienter) :
     connect(ui->comboBox_2, &QComboBox::currentTextChanged, this, &Pudel::vibr);
     connect(&client, &Client::roll, this, &Pudel::ololo);
     connect(ui->pushButton, &QPushButton::clicked, this, &Pudel::sochi);
+    connect(ui->pushButton_3, &QPushButton::clicked, this, &Pudel::redok);
 }
 
 Pudel::~Pudel()
@@ -66,18 +68,6 @@ void Pudel::regreg()
 
 void Pudel::vibr(QString s)
 {
-    if (s == "Шляпы")
-        client.sendTextMessage("imgdie\nГолова\nШляпы");
-    else
-        if (s == "Шапки")
-        client.sendTextMessage("imgdie\nГолова\nШапки");
-    else
-        if (s == "Кепки")
-            client.sendTextMessage("imgdie\nГолова\nКепки");
-    else
-           if (s == "Береты")
-           client.sendTextMessage("imgdie\nГолова\nБереты");
-
 }
 
 void Pudel::sochi()
@@ -95,4 +85,10 @@ void Pudel::sochi()
     QString kk = lopa.join("\n");
     client.sendTextMessage(kk);
     ui->listWidget_2->clear();
+}
+
+void Pudel::redok()
+{
+    Reddak kot(client, this);
+    kot.exec();
 }
