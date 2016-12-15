@@ -7,9 +7,7 @@
 QT       += websockets
 QT += widgets
 
-TARGET = client
-CONFIG   += console
-CONFIG   -= app_bundle
+TARGET = FishCli
 
 TEMPLATE = app
 
@@ -18,20 +16,26 @@ SOURCES += \
     client.cpp \
     logi.cpp \
     login.cpp \
-    pudel.cpp
+    pudel.cpp \
+    mainwindow.cpp \
+    reddak.cpp
 
 HEADERS += \
     client.h \
     logi.h \
     login.h \
-    pudel.h
+    pudel.h \
+    mainwindow.h \
+    reddak.h
 
 CONFIG += c++14
 
 FORMS += \
     logi.ui \
     login.ui \
-    pudel.ui
+    pudel.ui \
+    mainwindow.ui \
+    reddak.ui
 
 RESOURCES += \
     dogs.qrc
