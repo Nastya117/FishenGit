@@ -6,11 +6,5 @@ os:
 before_install:
   - brew install qt5
   - brew link --force qt5
-
 script:
-  - cd FishServ
-  - qmake
-  - make
-  - cd ../FishCli
-  - qmake 
-  - make 
+ - ./build-mac.sh
