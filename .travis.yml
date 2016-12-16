@@ -5,12 +5,12 @@ before_install:
 - brew install qt5
 - brew link --force qt5
 script:
-- "./build-mac.sh"
+- ./build-mac.sh $TRAVIS_TAG
 deploy:
   provider: releases
   api_key:
     secure: glbV2HM4MwXMR/AcKCBNzbeObiQyX8G6f33mSEF8YSPwzmeSBn69Q4xyEfvvAjwp07o42VUX8zOJxfz/mHEhijJ4ev/Eh73nRnOfuA/v8UV6qTTmFbZ6tFmC3HUPY3hFMKoV1R0h/a0rse2FAFb2qaahRDnrU1L0xzx/TSmWARDaU5KDIrvu+KGXrzphoku21q+Ct6948STiRj+IkSHPBo4XA6A8LyK3BmwFVI1iUOW7rR8DprD6LEGUdJXRCGKNweFvKJmm27Zdr5PiHlP3N9RZiJ9DslmKkq9Ylm9IFc0Aaefi2kEJpgd7jw6Qyl2Xs6OpzmYSWaICP6fpXGNVz6NaOtw50mH1xevfPadTVIpN94fM4k0YsOpfJjBU8TUGuZewW9VItojjEGmMkUNpSiaBoJ4ufUYwwos4gWTpmGPssctQ12PWh0U7IsGVtGNhzirAgx991zElSAmjBOwHhVhPo7v0DFe7JF43RnU8nDNpQ12VZSQiwWaqGoRLsPRtla20Sdoza/hFOGj190wJYdy3ehzz/YRttXd79YCWHhE8hiiseuHgkFybjEIO4Jpyrsn2pGtHULWBWgtvaxtiTM00Ox3K9YFVeWBE5+Mn52zUoSNpLo4vSbc70vdgl2K/3cGtzGMy5M6Tv7sfbjvnTHQaEX7atbHchinakRPsgBM=
   skip_cleanup: true
-  file: FishenGit.zip
+  file: FishenGit-mac-$TRAVIS_TAG.zip
   on:
     tags: true

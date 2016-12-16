@@ -1,7 +1,8 @@
 #!/bin/sh
+version=$1
 
 qmake
-make
+make -j4
 macdeployqt FishServ/FishServ.app
 macdeployqt FishCli/FishCli.app
-zip FishenGit.zip FishServ/FishServ.app FishCli/FishCli.app
+zip FishenGit-mac-${version}.zip FishServ/FishServ.app FishCli/FishCli.app
